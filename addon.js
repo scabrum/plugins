@@ -97,7 +97,7 @@ Lampa.SettingsApi.addComponent({
                             },
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/interface/tmdb.js', 'TMDB Proxy');
+							itemON('https://scabrum.github.io/plugins/tmdb.js', 'TMDB Proxy');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/tmdb-proxy";
@@ -125,7 +125,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/interface/feedback.js', 'Отзывы');
+							itemON('https://scabrum.github.io/plugins/feedback.js', 'Отзывы');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://newtv.mail66.org/o.js";
@@ -152,7 +152,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/interface/tricks.js', 'Tricks');
+							itemON('https://scabrum.github.io/plugins/tricks.js', 'Tricks');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://lampatv.site/tricks.js";
@@ -179,7 +179,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/interface/rating.js', 'Рейтинг КиноПоиск и IMDB');
+							itemON('https://scabrum.github.io/plugins/rating.js', 'Рейтинг КиноПоиск и IMDB');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/rating.js";
@@ -235,7 +235,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/management/exit_menu.js', '');
+							itemON('https://scabrum.github.io/plugins/exit_menu.js', '');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/e.js";
@@ -262,7 +262,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/management/new_version.js', 'Проверка Новой Версии');
+							itemON('https://scabrum.github.io/plugins/new_version.js', 'Проверка Новой Версии');
 							}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/updater.js";
@@ -289,7 +289,7 @@ Lampa.SettingsApi.addComponent({
                             		},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/management/hot_buttons.js', 'Горячие Кнопки');
+							itemON('https://scabrum.github.io/plugins/hot_buttons.js', 'Горячие Кнопки');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nnmdd.github.io/lampa_hotkeys/hotkeys.js";
@@ -316,7 +316,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/management/dlna.js', 'DLNA');
+							itemON('https://scabrum.github.io/plugins/dlna.js', 'DLNA');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/dlna";
@@ -372,7 +372,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/online/modss.js', 'Modss');
+							itemON('https://scabrum.github.io/plugins/modss.js', 'Modss');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://lampa.stream/modss";
@@ -399,7 +399,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/online/onlinemod.js', 'Online Mod');
+							itemON('https://scabrum.github.io/plugins/onlinemod.js', 'Online Mod');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/online_mod.js";
@@ -426,7 +426,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/online/prestige.js', 'Онлайн Prestige');
+							itemON('https://scabrum.github.io/plugins/prestige.js', 'Онлайн Prestige');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://jin.energy/newonline.js";
@@ -453,7 +453,7 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://lampa32.ru/addon/online/online.js', 'Онлайн');
+						itemON('https://scabrum.github.io/plugins/online.js', 'Онлайн');
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://jin.energy/online.js";
@@ -480,7 +480,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-                          			itemON('http://lampa32.ru/addon/online/ebuland.js', 'Ebu.land');
+                          			itemON('https://scabrum.github.io/plugins/ebuland.js', 'Ebu.land');
                         			}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://ebu.land/online.js";
@@ -536,10 +536,10 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/torrent/switch_parser.js', 'Переключение парсеров');
+							itemON('https://scabrum.github.io/plugins/switch_parser.js', 'Переключение парсеров');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://lampa32.ru/jackett.js";
+							var pluginToRemoveUrl = "https://scabrum.github.io/plugins/jackett.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
@@ -563,7 +563,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/torrent/tracks.js', 'Tracks');
+							itemON('https://scabrum.github.io/plugins/tracks.js', 'Tracks');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/tracks";
@@ -619,7 +619,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/tv/diesel.js', 'Дизель ТВ');
+							itemON('https://scabrum.github.io/plugins/diesel.js', 'Дизель ТВ');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://andreyurl54.github.io/diesel5/diesel.js";
@@ -646,7 +646,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/tv/kulik.js', 'Kulik TV');
+							itemON('https://scabrum.github.io/plugins/kulik.js', 'Kulik TV');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cdn.kulik.uz/cors";
@@ -673,7 +673,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/tv/iptv.js', 'IPTV');
+							itemON('https://scabrum.github.io/plugins/iptv.js', 'IPTV');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/iptv";
@@ -729,7 +729,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/radio/record.js', 'Радио Record');
+							itemON('https://scabrum.github.io/plugins/record.js', 'Радио Record');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/radio";
@@ -756,7 +756,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-							itemON('http://lampa32.ru/addon/radio/record_mod.js', 'Радио Record Mod');
+							itemON('https://scabrum.github.io/plugins/record_mod.js', 'Радио Record Mod');
                      				}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/rr.js";
@@ -812,7 +812,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/addon/18+/sisi.js', 'Клубничка');
+							itemON('https://scabrum.github.io/plugins/sisi.js', 'Клубничка');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://sisi.am/nyam.js";
