@@ -230,12 +230,12 @@ Lampa.SettingsApi.addComponent({
 					default: '1',
 						},
 					field: {
-                                    name: 'Выход в меню',
+                                    name: 'Выход',
                                     description: 'Плагин добавляет пункт Выход в главное меню'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://scabrum.github.io/plugins/exit_menu.js', '');
+							itemON('https://scabrum.github.io/plugins/exit_menu.js', 'Выход');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/e.js";
