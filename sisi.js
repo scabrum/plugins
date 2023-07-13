@@ -14,7 +14,7 @@
 
         var plugins_add = [
             {
-                "url": "http://sisi.am/nyam.js",
+                "url": "https://sisi.am/nyam.js",
                 "status": 1,
                 "name": "Клубничка",
                 "author": "@rik"
