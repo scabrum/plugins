@@ -308,12 +308,12 @@ Lampa.SettingsApi.addComponent({
 					default: '1',
 						},
 					field: {
-                                    name: 'Выход в меню',
+                                    name: 'Выход',
                                     description: 'Плагин добавляет пункт Выход в главное меню'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://tsynik.github.io/lampa/e.js', '');
+							itemON('https://tsynik.github.io/lampa/e.js', 'Выход');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/e.js";
@@ -761,6 +761,43 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
+	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Setting_torrents',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					default: '1',
+					},
+					field: {
+						name: 'Настройка торрентов',
+						description: 'Плагин для ТВ, на которых Lampa установлена через официальные магазины LG Store и Tizen App Store. Включает в настройках отображение пунктов Парсер и Torrserver, необходимых для просмотра торрентов'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://cub.watch/plugin/etor', 'Настройка Торрентов');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://cub.watch/plugin/etor";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://cub.watch/plugin/etor')
+						setTimeout(function() {	
+							$('div[data-name="Setting_torrents"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Setting_torrents"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
 						Lampa.SettingsApi.addComponent({
@@ -1050,15 +1087,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://sisi.am/nyam.js', 'Клубничка');
+							itemON('https://sisi.am/nyam.js', 'Клубничка');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://sisi.am/nyam.js";
+							var pluginToRemoveUrl = "https://sisi.am/nyam.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://sisi.am/nyam.js')
+						var myResult = checkPlugin('https://sisi.am/nyam.js')
 						setTimeout(function() {	
 							$('div[data-name="Sisi"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
