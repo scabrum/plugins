@@ -704,15 +704,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa32.ru/jackett.js', 'Переключение парсеров');
+							itemON('https://scabrum.github.io/plugins/jackett.js', 'Переключение парсеров');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://lampa32.ru/jackett.js";
+							var pluginToRemoveUrl = "https://scabrum.github.io/plugins/jackett.js";
 							deletePlugin(pluginToRemoveUrl);
 						}
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
-						var myResult = checkPlugin('http://lampa32.ru/jackett.js')
+						var myResult = checkPlugin('https://scabrum.github.io/plugins/jackett.js')
 						setTimeout(function() {	
 							$('div[data-name="Switch_Parser"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
