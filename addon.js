@@ -704,7 +704,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://scabrum.github.io/plugins/jackett.js', 'Переключение парсеров');
+							itemON('https://scabrum.github.io/plugins/jackett.js', 'Переключение Парсеров');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://scabrum.github.io/plugins/jackett.js";
