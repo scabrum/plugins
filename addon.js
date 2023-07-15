@@ -419,7 +419,7 @@ Lampa.SettingsApi.addComponent({
 					default: '1',
 						},
 					field: {
-                                    		name: 'DLNA (Tizen,Orsay)',
+                                    		name: 'DLNA (Tizen, Orsay)',
                                     		description: 'Плагин работает на устройстве Orsay, для Tizen необходимо обновить виджет до версии 1.9.1'
 					},
 					onChange: function(value) {
