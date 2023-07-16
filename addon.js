@@ -55,7 +55,7 @@ function hideInstall() {
 }
 
 function deletePlugin(pluginToRemoveUrl) {
-	const plugins = Lampa.Storage.get('plugins');
+	var plugins = Lampa.Storage.get('plugins');
 	var updatedPlugins = plugins.filter(function(obj) {return obj.url !== pluginToRemoveUrl});
 	Lampa.Storage.set('plugins', updatedPlugins);
 	Lampa.Storage.set('needReboot', true);
@@ -64,7 +64,7 @@ function deletePlugin(pluginToRemoveUrl) {
 };
 
 function checkPlugin(pluginToCheck) {
-	const plugins = Lampa.Storage.get('plugins');
+	var plugins = Lampa.Storage.get('plugins');
 	var checkResult = plugins.filter(function(obj) {return obj.url == pluginToCheck});
 	console.log('search', 'checkResult: ' + JSON.stringify(checkResult));
 	console.log('search', 'pluginToCheck: ' + pluginToCheck);
