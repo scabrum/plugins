@@ -178,7 +178,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://newtv.mail66.org/o.js', 'Отзывы');
+							itemON('http://newtv.mail66.org/o.js', 'Отзывы', '@elenatv99');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://newtv.mail66.org/o.js";
