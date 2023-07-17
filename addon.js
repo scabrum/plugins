@@ -1,5 +1,8 @@
 (function () {
     'use strict';
+Lampa.Listener.follow('app', function(e) {	
+    if(e.type == 'ready') {	
+	    
 /*
  * * * Иконки разделов плагина
  */
@@ -26,14 +29,16 @@ function itemON(sourceURL, sourceName) {
 };
 --> */
 
-function itemON(sourceURL, sourceName) {
+function itemON(sourceURL, sourceName, sourceAuthor) {
 	// Если перезагрузки не требуется - контроль после удаления плагинов
    if (!Lampa.Storage.get('needReboot')) {
 	// Получаем список плагинов
 		var pluginsArray = Lampa.Storage.get('plugins');
 	// Добавляем новый элемент к списку
 		pluginsArray.push({
+			"author": sourceAuthor,
 			"url": sourceURL,
+			"name": sourceName,
 			"status": 1
 		});
 	// Внедряем изменённый список в лампу
