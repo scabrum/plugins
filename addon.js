@@ -1128,5 +1128,6 @@ Lampa.SettingsApi.addComponent({
     ym(93937344, "init", {clickmap: true,trackLinks: true,accurateTrackBounce: true})
     var METRIKA = '<noscript><div><img src="https://mc.yandex.ru/watch/93937344" style="position:absolute; left:-9999px;" alt="" /></div></noscript>';
     $('body').append(METRIKA);
-
+}}) /* app waiting */
+	
 })();
