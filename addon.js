@@ -495,7 +495,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa.stream/modss', 'Modss');
+							itemON('http://lampa.stream/modss', 'Modss', '@Nikolai4');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://lampa.stream/modss";
@@ -532,7 +532,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod');
+							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod', '@t_anton');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/online_mod.js";
@@ -569,7 +569,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://jin.energy/newonline.js', 'Онлайн Prestige');
+							itemON('http://jin.energy/newonline.js', 'Онлайн Prestige', '@lampa');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://jin.energy/newonline.js";
@@ -606,7 +606,7 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://jin.energy/online.js', 'Онлайн');
+						itemON('http://jin.energy/online.js', 'Онлайн', '@lampa');
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://jin.energy/online.js";
@@ -643,7 +643,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-                          			itemON('http://ebu.land/online.js', 'Ebu.land');
+                          			itemON('http://ebu.land/online.js', 'Ebu.land', '@rik');
                         			}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://ebu.land/online.js";
@@ -704,12 +704,12 @@ Lampa.SettingsApi.addComponent({
 					default: '1',
                   			},
 					field: {
-						name: 'Переключение между парсерами',
+						name: 'Переключение парсеров',
 						description: 'Плагин позволяет переключаться между парсерами jackett из списка с уже забитыми правильными параметрами. В настройках парсера появится пункт со списком общедоступных jacketts'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://scabrum.github.io/plugins/jackett.js', 'Переключение Парсеров');
+							itemON('https://scabrum.github.io/plugins/jackett.js', 'Переключение Парсеров', '@AndreyURL54');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://scabrum.github.io/plugins/jackett.js";
@@ -746,7 +746,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.watch/plugin/tracks', 'Tracks');
+							itemON('http://cub.watch/plugin/tracks', 'Tracks', '@lampa');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/tracks";
@@ -783,7 +783,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.watch/plugin/etor', 'Настройка Торрентов');
+							itemON('http://cub.watch/plugin/etor', 'Настройка Торрентов', '@lampa');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/etor";
@@ -849,7 +849,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://andreyurl54.github.io/diesel5/diesel.js', 'Дизель ТВ');
+							itemON('https://andreyurl54.github.io/diesel5/diesel.js', 'Дизель ТВ', '@AndreyURL54');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://andreyurl54.github.io/diesel5/diesel.js";
@@ -886,7 +886,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cdn.kulik.uz/cors', 'Kulik TV');
+							itemON('http://cdn.kulik.uz/cors', 'Kulik TV', '@SawamuraRen');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cdn.kulik.uz/cors";
@@ -923,7 +923,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.watch/plugin/iptv', 'IPTV');
+							itemON('http://cub.watch/plugin/iptv', 'IPTV', '@lampa');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/iptv";
@@ -989,7 +989,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.watch/plugin/radio', 'Радио Record');
+							itemON('http://cub.watch/plugin/radio', 'Радио Record', '@lampa');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/radio";
@@ -1026,7 +1026,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-							itemON('https://nemiroff.github.io/lampa/rr.js', 'Радио Record Mod');
+							itemON('https://nemiroff.github.io/lampa/rr.js', 'Радио Record Mod', '@nemiroff');
                      				}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/rr.js";
@@ -1092,7 +1092,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://sisi.am/nyam.js', 'Клубничка');
+							itemON('https://sisi.am/nyam.js', 'Клубничка', '@rik');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://sisi.am/nyam.js";
