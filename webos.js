@@ -219,7 +219,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampatv.site/tricks.js', 'Tricks', '@AndreyURL54', item.name);
+							itemON('http://lampatv.site/tricks.js', 'Tricks', '@AndreyURL54', item.param.name);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://lampatv.site/tricks.js";
