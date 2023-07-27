@@ -32,29 +32,31 @@ function itemON(sourceURL, sourceName) {
 --> */
 
 function itemON(sourceURL, sourceName, sourceAuthor) {
-	// Если перезагрузки не требуется - контроль после удаления плагинов
-   if (!Lampa.Storage.get('needReboot')) {
-	// Получаем список плагинов
-		var pluginsArray = Lampa.Storage.get('plugins');
-	// Добавляем новый элемент к списку
-		pluginsArray.push({
-			"author": sourceAuthor,
-			"url": sourceURL,
-			"name": sourceName,
-			"status": 1
-		});
-	// Внедряем изменённый список в лампу
-		Lampa.Storage.set('plugins', pluginsArray);
-	// Делаем инъекцию скрипта для немедленной работы
-		var script = document.createElement ('script');
-		script.src = sourceURL;
-		document.getElementsByTagName ('head')[0].appendChild (script);
-		setTimeout(function() {
-			Lampa.Settings.update();
-			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
-		}, 300);
-   } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!")}
-};
+if ($('DIV[data-name="Tricks"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {
+		// Если перезагрузки не требуется - контроль после удаления плагинов
+	   if (!Lampa.Storage.get('needReboot')) {
+		// Получаем список плагинов
+			var pluginsArray = Lampa.Storage.get('plugins');
+		// Добавляем новый элемент к списку
+			pluginsArray.push({
+				"author": sourceAuthor,
+				"url": sourceURL,
+				"name": sourceName,
+				"status": 1
+			});
+		// Внедряем изменённый список в лампу
+			Lampa.Storage.set('plugins', pluginsArray);
+		// Делаем инъекцию скрипта для немедленной работы
+			var script = document.createElement ('script');
+			script.src = sourceURL;
+			document.getElementsByTagName ('head')[0].appendChild (script);
+			setTimeout(function() {
+				Lampa.Settings.update();
+				Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
+			}, 300);
+	   } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!")}
+	};
+}
 	
 function hideInstall() {
 	$("#hideInstall").remove();
