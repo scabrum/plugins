@@ -31,8 +31,8 @@ function itemON(sourceURL, sourceName) {
 };
 --> */
 
-function itemON(sourceURL, sourceName, sourceAuthor) {
-if ($('DIV[data-name="Tricks"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {
+function itemON(sourceURL, sourceName, sourceAuthor, itemName) {
+if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {
 		// Если перезагрузки не требуется - контроль после удаления плагинов
 	   if (!Lampa.Storage.get('needReboot')) {
 		// Получаем список плагинов
@@ -219,7 +219,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampatv.site/tricks.js', 'Tricks', '@AndreyURL54');
+							itemON('http://lampatv.site/tricks.js', 'Tricks', '@AndreyURL54', item.name);
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://lampatv.site/tricks.js";
