@@ -140,7 +140,7 @@ Lampa.SettingsApi.addComponent({
                             },
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.watch/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB Proxy');
+							itemON('http://cub.watch/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/tmdb-proxy";
@@ -252,7 +252,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nb557.github.io/plugins/rating.js', 'Рейтинг КиноПоиск и IMDB', '@t_anton', 'Рейтинг КиноПоиск и IMDB');
+							itemON('https://nb557.github.io/plugins/rating.js', 'Рейтинг КиноПоиск и IMDB', '@t_anton', 'Rating');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/rating.js";
@@ -318,7 +318,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://tsynik.github.io/lampa/e.js', 'Выход', '@tsynik');
+							itemON('https://tsynik.github.io/lampa/e.js', 'Выход', '@tsynik', 'Exit_Menu');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://tsynik.github.io/lampa/e.js";
@@ -355,7 +355,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nemiroff.github.io/lampa/updater.js', 'Проверка Новой Версии', '@nemiroff');
+							itemON('https://nemiroff.github.io/lampa/updater.js', 'Проверка Новой Версии', '@nemiroff', 'New_Version');
 							}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/updater.js";
@@ -392,7 +392,7 @@ Lampa.SettingsApi.addComponent({
                             		},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nnmdd.github.io/lampa_hotkeys/hotkeys.js', 'Горячие Кнопки', '@nnmd');
+							itemON('https://nnmdd.github.io/lampa_hotkeys/hotkeys.js', 'Горячие Кнопки', '@nnmd', 'Hot_Buttons');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nnmdd.github.io/lampa_hotkeys/hotkeys.js";
@@ -429,7 +429,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.watch/plugin/dlna', 'DLNA', '@lampa');
+							itemON('http://cub.watch/plugin/dlna', 'DLNA', '@lampa', 'DLNA');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/dlna";
@@ -495,7 +495,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampa.stream/modss', 'Modss', '@Nikolai4');
+							itemON('http://lampa.stream/modss', 'Modss', '@Nikolai4', 'Modss');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://lampa.stream/modss";
@@ -532,7 +532,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod', '@t_anton');
+							itemON('https://nb557.github.io/plugins/online_mod.js', 'Online Mod', '@t_anton', 'Online_Mod');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/online_mod.js";
@@ -569,7 +569,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://jin.energy/newonline.js', 'Онлайн Prestige', '@lampa');
+							itemON('http://jin.energy/newonline.js', 'Онлайн Prestige', '@lampa', 'Онлайн_Prestige');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://jin.energy/newonline.js";
@@ -606,7 +606,7 @@ Lampa.SettingsApi.addComponent({
 					},
                            		onChange: function(value) {
 					if (value == '1') {
-						itemON('http://jin.energy/online.js', 'Онлайн', '@lampa');
+						itemON('http://jin.energy/online.js', 'Онлайн', '@lampa', 'Онлайн');
 					}
 					if (value == '2') {
 						var pluginToRemoveUrl = "http://jin.energy/online.js";
@@ -643,7 +643,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
                         			if (value == '1') {
-                          			itemON('http://ebu.land/online.js', 'Ebu.land', '@rik');
+                          			itemON('http://ebu.land/online.js', 'Ebu.land', '@rik', 'Ebuland');
                         			}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://ebu.land/online.js";
