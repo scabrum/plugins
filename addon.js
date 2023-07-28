@@ -178,7 +178,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://newtv.mail66.org/o.js', 'Отзывы', '@elenatv99');
+							itemON('http://newtv.mail66.org/o.js', 'Отзывы', '@elenatv99', 'Отзывы');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://newtv.mail66.org/o.js";
@@ -215,7 +215,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampatv.site/tricks.js', 'Tricks', '@AndreyURL54');
+							itemON('http://lampatv.site/tricks.js', 'Tricks', '@AndreyURL54', 'Tricks');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://lampatv.site/tricks.js";
@@ -252,7 +252,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://nb557.github.io/plugins/rating.js', 'Рейтинг КиноПоиск и IMDB', '@t_anton');
+							itemON('https://nb557.github.io/plugins/rating.js', 'Рейтинг КиноПоиск и IMDB', '@t_anton', 'Рейтинг КиноПоиск и IMDB');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://nb557.github.io/plugins/rating.js";
