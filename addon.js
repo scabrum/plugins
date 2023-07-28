@@ -28,8 +28,8 @@ function itemON(sourceURL, sourceName) {
 };
 --> */
 
-function itemON(sourceURL, sourceName, sourceAuthor) {
-//if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {	
+function itemON(sourceURL, sourceName, sourceAuthor, itemName) {
+if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {	
 	// Если перезагрузки не требуется - контроль после удаления плагинов
    if (!Lampa.Storage.get('needReboot')) {
 	// Получаем список плагинов
@@ -52,8 +52,8 @@ function itemON(sourceURL, sourceName, sourceAuthor) {
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		}, 300);
    } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!")}
-};
-	
+ };
+}	
 function hideInstall() {
 	$("#hideInstall").remove();
 	$('body').append('<div id="hideInstall"><style>div.settings-param__value{opacity: 0%!important;display: none;}</style><div>')
