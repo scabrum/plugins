@@ -140,7 +140,7 @@ Lampa.SettingsApi.addComponent({
                             },
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://cub.watch/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB');
+							itemON('http://cub.watch/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB Proxy');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/tmdb-proxy";
