@@ -279,8 +279,8 @@ Lampa.SettingsApi.addComponent({
                                          type: 'static',
                                   },
                                   field: {
-                                         name: icon_add_reboot
-					 description: 'Нажмите для перезагрузки Lampa'
+                                         name: icon_add_reboot,
+					 description: 'Нажмите для перезагрузки Lampa',
 	                           },
                                    onRender: function (item) {
                                       item.on('hover:enter', function(){
