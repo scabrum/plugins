@@ -272,6 +272,42 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Want',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					default: '1',
+						},
+					field: {
+						name: 'Старый стиль пунктов (Закладки, Нравится, Позже)',
+						description: 'Плагин возвращает в главное меню старый стиль отображения пунктов (Закладки, Нравится, Позже)'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://github.freebie.tom.ru/want.js', 'Старый стиль пунктов (Закладки, Нравится, Позже)', '@VitalikPVA', 'Want');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://github.freebie.tom.ru/want.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('http://github.freebie.tom.ru/want.js')
+						setTimeout(function() {	
+							$('div[data-name="Want"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Want"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Want"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
                                          name: 'Reboot_interface_plugin',
