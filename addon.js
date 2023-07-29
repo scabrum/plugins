@@ -288,7 +288,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://github.freebie.tom.ru/want.js', 'Старый стиль пунктов (Закладки, Нравится, Позже)', '@VitalikPVA', 'Want');
+							itemON('http://github.freebie.tom.ru/want.js', 'Старый Стиль Пунктов (Закладки, Нравится, Позже)', '@VitalikPVA', 'Want');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://github.freebie.tom.ru/want.js";
