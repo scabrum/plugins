@@ -14,9 +14,9 @@
 
         var plugins_add = [
             {
-                "url": "http://lampa32.ru/jackett.js",
+                "url": "https://scabrum.github.io/plugins/jackett.js",
                 "status": 1,
-                "name": "Переключение между парсерами",
+                "name": "Переключение парсеров",
                 "author": "@AndreyURL54"
             }
         ];
