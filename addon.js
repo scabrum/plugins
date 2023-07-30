@@ -502,6 +502,42 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Select_Weapon',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Тип управления',
+                                    		description: 'Плагин при установке позволяет выбрать тип управления (Пульт без мышки, Пульт с мышью, Тачскрин), а так же сбросить тип управления выбранный ранее'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://nemiroff.github.io/lampa/select_weapon.js', 'Тип Управления', '@nemiroff', 'Select_Weapon');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nemiroff.github.io/lampa/select_weapon.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://nemiroff.github.io/lampa/select_weapon.js')
+						setTimeout(function() {	
+							$('div[data-name="Select_Weapon"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Select_Weapon"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Select_Weapon"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});	
+	        Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
                                   param: {
                                          name: 'Reboot_management_plugin',
