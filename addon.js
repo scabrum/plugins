@@ -170,7 +170,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 						},
 					field: {
 						name: 'Отзывы',
@@ -207,7 +207,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 						},
 					field: {
 						name: 'Tricks',
@@ -244,7 +244,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 						},
 					field: {
 						name: 'Рейтинг КиноПоиск и IMDB',
@@ -280,7 +280,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 						},
 					field: {
 						name: 'Старый стиль пунктов (Закладки, Нравится, Позже)',
@@ -363,7 +363,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 						},
 					field: {
                                     name: 'Выход',
@@ -400,7 +400,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 						},
 					field: {
 						name: 'Проверка новой версии',
@@ -437,7 +437,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 					},
                             		field: {
                                     		name: 'Горячие кнопки',
@@ -474,7 +474,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 						},
 					field: {
                                     		name: 'DLNA (Tizen, Orsay)',
@@ -556,7 +556,7 @@ Lampa.SettingsApi.addComponent({
 						1:	'Установить',
 						2:	'Удалить',
 					},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Modss',
@@ -593,7 +593,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 					},
-					default: '1',
+					//default: '1',
               				},
 					field: {
 						name: 'Online_Mod',
@@ -630,7 +630,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 					},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Онлайн Prestige',
@@ -667,7 +667,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
                    				},
-					default: '1',
+					//default: '1',
                				},
 					field: {
                                   		name: 'Онлайн',
@@ -704,7 +704,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
                        			},
-					default: '1',
+					//default: '1',
                    			},
 					field: {
 						name: 'Ebu.land',
@@ -786,7 +786,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
                   			},
 					field: {
 						name: 'Переключение парсеров',
@@ -823,7 +823,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Tracks',
@@ -860,7 +860,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Настройка торрентов',
@@ -942,7 +942,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Дизель ТВ',
@@ -979,7 +979,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
                         		},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Kulik',
@@ -1016,7 +1016,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 							name: 'IPTV',
@@ -1098,7 +1098,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
                         			},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Радио Record',
@@ -1135,7 +1135,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
                         			},
-					default: '1',
+					//default: '1',
 					},
 					field: {
 						name: 'Радио Record Mod',
@@ -1217,7 +1217,7 @@ Lampa.SettingsApi.addComponent({
 							1:	'Установить',
 							2:	'Удалить',
 						},
-						default: '1',
+						//default: '1',
 					},
 					field: {
 						name: 'Клубничка',
