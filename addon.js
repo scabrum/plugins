@@ -899,7 +899,7 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
 					},
 					field: {
-						name: 'Настройка торрентов',
+						name: 'Настройка торрентов (Web OS, Tizen)',
 						description: 'Плагин для ТВ, на которых Lampa установлена через официальные магазины LG Store и Tizen App Store. Включает в настройках отображение пунктов Парсер и Torrserver, необходимых для просмотра торрентов'
 					},
 					onChange: function(value) {
