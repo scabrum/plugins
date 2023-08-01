@@ -1182,7 +1182,7 @@ Lampa.SettingsApi.addComponent({
 
 /* Перезагрузка */ 
 Lampa.Settings.listener.follow('open', function (e) {
-	if (e.name == 'add_interface_plugin') || (e.name == 'add_management_plugin') || (e.name == 'add_online_plugin') || (e.name == 'add_torrent_plugin') || (e.name == 'add_tv_plugin') || (e.name == 'add_radio_plugin') || (e.name == 'add_sisi_plugin'){
+	if ((e.name == 'add_interface_plugin') || (e.name == 'add_management_plugin') || (e.name == 'add_online_plugin') || (e.name == 'add_torrent_plugin') || (e.name == 'add_tv_plugin') || (e.name == 'add_radio_plugin') || (e.name == 'add_sisi_plugin')) {
 		location.reload();
 	}
 })
