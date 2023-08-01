@@ -1179,14 +1179,15 @@ Lampa.SettingsApi.addComponent({
 						}, 100);		  
 					}
 		});
-
+/*
 /* Перезагрузка */ 
 Lampa.Settings.listener.follow('open', function (e) {
 	if ((e.name == 'add_interface_plugin') || (e.name == 'add_management_plugin') || (e.name == 'add_online_plugin') || (e.name == 'add_torrent_plugin') || (e.name == 'add_tv_plugin') || (e.name == 'add_radio_plugin') || (e.name == 'add_sisi_plugin')) {
 		location.reload();
 	}
-})
-
+}) 
+*/
+	
 /* Счётчик Яндекса */    
 	(function(m, e, t, r, i, k, a) {
                        m[i] = m[i] || function() {
