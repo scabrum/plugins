@@ -308,6 +308,42 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Sub_reset',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Сброс настроек субтитров',
+						description: 'Плагин сбрасывает настройки субтитров по умолчанию'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://nb557.github.io/plugins/reset_subs.js', 'Сброс Настроек Субтитров', '@t_anton', 'Sub_reset');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nb557.github.io/plugins/reset_subs.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://nb557.github.io/plugins/reset_subs.js')
+						setTimeout(function() {	
+							$('div[data-name="Sub_reset"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Sub_reset"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	        Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
                                          name: 'Reboot_interface_plugin',
@@ -536,7 +572,43 @@ Lampa.SettingsApi.addComponent({
 							}
 						}, 100);			  
 					}
-		});	
+		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Touch_off',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Выключение тача',
+                                    		description: 'Плагин выключает сенсорное управление, если оно было включено по ошибке'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://nb557.github.io/plugins/not_mobile.js', 'Выключение Тача', '@t_anton', 'Touch_off');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://nb557.github.io/plugins/not_mobile.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://nb557.github.io/plugins/not_mobile.js')
+						setTimeout(function() {	
+							$('div[data-name="Touch_off"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Touch_off"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Touch_off"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
 	        Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
                                   param: {
