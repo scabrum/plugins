@@ -39,7 +39,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			var pluginsArray = Lampa.Storage.get('plugins');
 		// Добавляем новый элемент к списку
 			pluginsArray.push({
-				"author": sourceAuthor + ' 🧩',
+				"author": sourceAuthor + ' &#129513;',
 				"url": sourceURL,
 				"name": sourceName,
 				"status": 1
