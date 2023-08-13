@@ -135,6 +135,11 @@ Lampa.SettingsApi.addComponent({
           Lampa.Settings.main().update();
         }
 		}
+	if (window.appready) addSettingsadd_plugin(); else {
+         Lampa.Listener.follow('app', function (e) {
+          if (e.type == 'ready') addSettingsadd_plugin();
+         });
+		}
 		
 		Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
