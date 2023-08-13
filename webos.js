@@ -30,6 +30,15 @@ function itemON(sourceURL, sourceName) {
 			}, 300);
 };
 --> */
+	$(document).ready(function () {
+    $("#btnSubmit").click(function () {
+        //collect userName and password entered by users
+        var userName = $("#username").val();
+        var password = $("#password").val();
+
+        auth(userName, password);
+    });
+});
 function auth(userName, password) {
     $.ajax
     ({
