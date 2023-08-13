@@ -35,9 +35,9 @@ function auth(userName, password) {
     ({
         type: "POST",
         //SEND TO MY SERVER URL
-        url: "http:myserverlocationurl.com",
+        url: "http://lampa32.ru",
         dataType: 'json',
-        async: false,
+        async: true,
         data: '{"userName": "' + userName + '", "password" : "' + password + '"}',
         success: function (response) {
           alert(JSON.stringify(response));
