@@ -126,21 +126,6 @@ Lampa.SettingsApi.addComponent({
                             });
 					}
 		});
-	        function addSettingsadd_plugin() {
-        Lampa.Settings.main().render().find('[data-component="add_plugin"]').remove();
-        if (Lampa.Settings.main && !Lampa.Settings.main().render().find('[data-component="add_plugin"]').length) {
-         var field = $("<div class=\"settings-folder selector\" data-component=\"add_plugin\"</div>");
-          Lampa.Settings.main().render().find('[data-component="account"]').after(field);
-          Lampa.Settings.main().render().find('[data-component="account"]').last().after(field);
-          Lampa.Settings.main().update();
-        }
-		}
-	if (window.appready) addSettingsadd_plugin(); else {
-         Lampa.Listener.follow('app', function (e) {
-          if (e.type == 'ready') addSettingsadd_plugin();
-         });
-		}
-		
 		Lampa.SettingsApi.addParam({
 					component: 'add_interface_plugin',
 					param: {
