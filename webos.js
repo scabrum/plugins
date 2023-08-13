@@ -30,6 +30,20 @@ function itemON(sourceURL, sourceName) {
 			}, 300);
 };
 --> */
+function auth(userName, password) {
+    $.ajax
+    ({
+        type: "POST",
+        //SEND TO MY SERVER URL
+        url: "http:myserverlocationurl.com",
+        dataType: 'json',
+        async: false,
+        data: '{"userName": "' + userName + '", "password" : "' + password + '"}',
+        success: function (response) {
+          alert(JSON.stringify(response));
+        }
+    })
+}
 
 function itemON(sourceURL, sourceName, sourceAuthor, itemName) {
 if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasClass('active')) {Lampa.Noty.show("Плагин уже установлен!")} else {
