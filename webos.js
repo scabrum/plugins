@@ -468,12 +468,6 @@ Lampa.SettingsApi.addComponent({
 							component: 'add_online_plugin',
 							name: 'Online'
 						});
-					/* Сдвигаем раздел выше */
-						setTimeout(function() {
-							$('div[data-component=add_plugin]').remove();
-							$('div[data-component=plugins]').before('<div class="settings-folder selector" data-component="add_plugin"><div class="settings-folder__icon">' + icon_add_plugin + '</div><div class="settings-folder__name">Плагины</div></div>')
-						}, 30)
-					}
 		});
 /* Онлайн */
 		Lampa.SettingsApi.addParam({
