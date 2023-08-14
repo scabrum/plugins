@@ -219,15 +219,15 @@ Lampa.SettingsApi.addComponent({
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('http://lampatv.site/tricks.js', 'Tricks', '@AndreyURL54', 'Tricks');
+							itemON('https://andreyurl54.github.io/diesel5/tricks.js', 'Приятные мелочи', '@AndreyURL54', 'Tricks');
 						}
 						if (value == '2') {
-							var pluginToRemoveUrl = "http://lampatv.site/tricks.js";
+							var pluginToRemoveUrl = "https://andreyurl54.github.io/diesel5/tricks.js";
 							deletePlugin(pluginToRemoveUrl);
 						}	
 					},
 					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900');  hideInstall()
-						var myResult = checkPlugin('http://lampatv.site/tricks.js')
+						var myResult = checkPlugin('https://andreyurl54.github.io/diesel5/tricks.js')
 						setTimeout(function() {	
 							$('div[data-name="Tricks"]').append('<div class="settings-param__status one"></div>')
 							if (myResult) {
