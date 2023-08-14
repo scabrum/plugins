@@ -145,6 +145,15 @@ Lampa.SettingsApi.addComponent({
 					onChange: function(value) {
 						if (value == '1') {
 							itemON('http://cub.watch/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB');
+							Lampa.Modal.open({
+  										title: element.title,
+  										size: 'medium',
+  										html: $('<div style="font-size:4vw">' + $(element.description)[0].innerHTML + '</div>'),
+  										onBack: function onBack() {
+  											Lampa.Modal.close();
+  											Lampa.Controller.toggle('content');
+  										}
+  									});
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/tmdb-proxy";
