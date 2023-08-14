@@ -40,7 +40,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			var pluginsArray = Lampa.Storage.get('plugins');
 		// Добавляем новый элемент к списку
 			pluginsArray.push({
-				"author": '🧩 ' + sourceAuthor + ' 🧩',
+				"author": sourceAuthor + '',
 				"url": sourceURL,
 				"name": sourceName,
 				"status": 1
@@ -146,6 +146,15 @@ Lampa.SettingsApi.addComponent({
 						if (value == '1') {
 							itemON('http://cub.watch/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa');
 						}
+						Lampa.Modal.open({
+  										title: element.title,
+  										size: 'medium',
+  										html: $('<div style="font-size:4vw">' + $(element.description)[0].innerHTML + '</div>'),
+  										onBack: function onBack() {
+  											Lampa.Modal.close();
+  											Lampa.Controller.toggle('content');
+  										}
+  									});
 						if (value == '2') {
 							var pluginToRemoveUrl = "http://cub.watch/plugin/tmdb-proxy";
 							deletePlugin(pluginToRemoveUrl);
