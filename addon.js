@@ -214,12 +214,12 @@ Lampa.SettingsApi.addComponent({
 					//default: '1',
 						},
 					field: {
-						name: 'Tricks',
-						description: 'Приятные мелочи (разные скринсейверы, стилизация кнопок, стиль плеера, часы в плеере и т.п.)'
+						name: 'Приятные Мелочи',
+						description: 'Плагин позволяет на выбор установить различные дополнения (скринсейверы, стилизация кнопок, стиль плеера, часы в плеере и т.п.)'
 					},
 					onChange: function(value) {
 						if (value == '1') {
-							itemON('https://andreyurl54.github.io/diesel5/tricks.js', 'Приятные мелочи', '@AndreyURL54', 'Tricks');
+							itemON('https://andreyurl54.github.io/diesel5/tricks.js', 'Приятные Мелочи', '@AndreyURL54', 'Tricks');
 						}
 						if (value == '2') {
 							var pluginToRemoveUrl = "https://andreyurl54.github.io/diesel5/tricks.js";
