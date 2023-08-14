@@ -468,6 +468,7 @@ Lampa.SettingsApi.addComponent({
 							component: 'add_online_plugin',
 							name: 'Online'
 						});
+					}
 		});
 /* Онлайн */
 		Lampa.SettingsApi.addParam({
