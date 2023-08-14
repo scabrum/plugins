@@ -146,9 +146,9 @@ Lampa.SettingsApi.addComponent({
 						if (value == '1') {
 							itemON('http://cub.watch/plugin/tmdb-proxy', 'TMDB Proxy', '@lampa', 'TMDB');
 							Lampa.Modal.open({
-  										title: element.title,
+  										title: el,
   										size: 'medium',
-  										html: $('<div style="font-size:4vw">' + $(element.description)[0].innerHTML + '</div>'),
+  										html: modal,
   										onBack: function onBack() {
   											Lampa.Modal.close();
   											Lampa.Controller.toggle('content');
