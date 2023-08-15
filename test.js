@@ -1,7 +1,5 @@
 (function () {
-    'use strict';
-var host = ['localhost', 'lampa.mx'];
-function hostOK(){	
+    'use strict';	
 function addonStart() {
 	    
 /*
@@ -1393,9 +1391,6 @@ Lampa.SettingsApi.addComponent({
     $('body').append(METRIKA);
 } // /* addonStart */
 if (!!window.appready) addonStart();
-else Lampa.Listener.follow('app', function(e){if (e.type === 'ready') addonStart()});	
-}	
-function hostNO(){
-location.reload();	
-}
+else Lampa.Listener.follow('app', function(e){if (e.type === 'ready') addonStart()});		
+
 })();
