@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-var hostA = ['localhost', 'http://lampa.mx'];
+var host = ['localhost'];
 function hostOK(){	
 function addonStart() {
 	    
