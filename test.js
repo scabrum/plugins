@@ -1,8 +1,5 @@
 (function () {
     'use strict';
-	var array = ["location", "host", "https://scabrium.github.io", "Вы можете использовать этот скрипт на домене: ", "Вы не можете использовать этот скрипт на домене: "];
-	var host = window[array[0]][array[1]];
-	host == array[2] ? alert(array[3]+host) : alert(array[4]+host);
 function addonStart() {
 	    
 /*
