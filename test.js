@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-var host = ['localhost', 'scabrum.github.io'];
+var hostA = ['localhost', 'scabrum.github.io'];
 function hostOK(){	
 function addonStart() {
 	    
