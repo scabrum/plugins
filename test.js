@@ -1,5 +1,7 @@
 (function () {
     'use strict';
+var hostA = ['localhost', 'sitename.ru'];
+function hostOK(){	
 function addonStart() {
 	    
 /*
@@ -1392,5 +1394,8 @@ Lampa.SettingsApi.addComponent({
 } // /* addonStart */
 if (!!window.appready) addonStart();
 else Lampa.Listener.follow('app', function(e){if (e.type === 'ready') addonStart()});	
-	
+}	
+function hostNO(){
+location.reload();	
+}
 })();
