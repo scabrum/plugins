@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-var host = ['localhost', 'scabrum.github.io', 'lampa.mx', '176.59.164.150'];
+var host = ['localhost', 'lampa.mx'];
 function hostOK(){	
 function addonStart() {
 	    
