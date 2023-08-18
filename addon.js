@@ -939,7 +939,7 @@ Lampa.SettingsApi.addComponent({
 					},
 					field: {
 						name: 'Tracks',
-						description: 'Плагин заменяет название аудиодорожек и субтитров в плеере, плагин работает только в торрентах'
+						description: 'Плагин заменяет название аудиодорожек и субтитров в плеере (работает только в торрентах)'
 					},
 					onChange: function(value) {
 						if (value == '1') {
