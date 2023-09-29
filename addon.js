@@ -1000,6 +1000,42 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 	        Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Check_server',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Поиск локального TorrServera',
+						description: 'Плагин позволяет произвести поиск вашего локального TorrServera'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://95.215.8.180/checker.js', 'Поиск Локального TorrServera', '@AndreyURL54', 'Check_server');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://95.215.8.180/checker.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://95.215.8.180/checker.js')
+						setTimeout(function() {	
+							$('div[data-name="Check_server"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Check_server"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	        Lampa.SettingsApi.addParam({
                                   component: 'add_torrent_plugin',
                                   param: {
                                          name: 'Reboot_torrent_plugin',
