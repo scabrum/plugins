@@ -65,7 +65,27 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Storage.set('plugins', updatedPlugins);
 	Lampa.Storage.set('needReboot', true);
 	Lampa.Settings.update();
-	Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa"); 
+	Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa");
+  function showReload() {
+    Lampa.Modal.open({
+      title: '',
+      align: 'center',
+      zIndex: 300,
+      html: $('<div class="about">' + 'Для применения плагина необходимо перезагрузить приложение' + '</div>'),
+      buttons: [{
+        name: 'Нет',
+        onSelect: function onSelect() {
+          Lampa.Modal.close();
+          $('.modal').remove();
+        }
+      }, {
+        name: 'Да',
+        onSelect: function onSelect() {
+          window.location.reload();
+        }
+      }]
+    });
+  };
 };
 
 function checkPlugin(pluginToCheck) {
