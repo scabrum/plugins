@@ -67,6 +67,10 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Settings.update();
 	//Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa");
   //function showReload() {
+  var interval = setInterval(function() {
+  var elementSE = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
+  if (!elementSE.length > 0){
+    clearInterval(interval);
     Lampa.Modal.open({
       title: '',
       align: 'center',
@@ -85,6 +89,8 @@ function deletePlugin(pluginToRemoveUrl) {
         }
       }]
     });
+  }
+}, 1000)	
   //};
 };
 
