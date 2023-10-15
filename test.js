@@ -39,15 +39,17 @@ Lampa.Modal.open({
 }
 /* Следим за настройками */
 function settingsWatch() {
-  	var intervalSettings = setInterval(function() {
-  		var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
-  		if (!elementSettings.length > 0){
-    			clearInterval(intervalSettings);
-			showReload();
-  		}
-	}, 1000)
+	/* проверяем флаг перезагрузки и ждём выхода из настроек */
+	if (Lampa.Storage.get('needReboot')) {
+  		var intervalSettings = setInterval(function() {
+  			var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
+  			if (!elementSettings.length > 0){
+    				clearInterval(intervalSettings);
+				showReload();
+  			}
+		}, 1000)
+	}
 }
-	
 /* Способ от Lampac -->
 function itemON(sourceURL, sourceName) {
                    var script = document.createElement ('script');
@@ -83,7 +85,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		}, 300);
-	   settingsWatch(); //здесь задать проверку сколько раз вызываем цикл
+	   settingsWatch();
    } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!"); showReload();}
  };
 }	
@@ -98,7 +100,6 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Storage.set('plugins', updatedPlugins);
 	Lampa.Storage.set('needReboot', true);
 	Lampa.Settings.update();
-	showReload();
 	//Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa");
 };
 
