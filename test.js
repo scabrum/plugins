@@ -29,7 +29,7 @@ Lampa.Modal.open({
         onSelect: function onSelect() {
           Lampa.Modal.close();
           $('.modal').remove();
-	  Lampa.Controller.toggle('add_plugin_component');
+	  Lampa.Controller.toggle(enabled);
         }
       }, {
         name: 'Да',
