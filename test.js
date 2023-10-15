@@ -43,9 +43,9 @@ function settingsWatch() {
 	/* проверяем флаг перезагрузки и ждём выхода из настроек */
 	if (Lampa.Storage.get('needRebootSettingExit')) {
   		var intervalSettings = setInterval(function() {
-  			var elementSettings = $('[data-component="account"]');
+  			var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
   			if (elementSettings.length > 0){
-    				clearInterval(intervalSettings);
+    				clearInterval(!intervalSettings);
 				showReload();
   			}
 		}, 1000)
@@ -89,7 +89,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	   Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
-   } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!"); showReload();}
+   } else showReload();
  };
 }	
 function hideInstall() {
