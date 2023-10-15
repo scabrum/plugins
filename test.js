@@ -44,7 +44,7 @@ function settingsWatch() {
 	if (Lampa.Storage.get('needRebootSettingExit')) {
   		var intervalSettings = setInterval(function() {
   			var elementSettings = $('[data-component="account"]');
-  			if (!elementSettings.length > 0){
+  			if (elementSettings.length > 0){
     				clearInterval(intervalSettings);
 				showReload();
   			}
