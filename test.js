@@ -90,6 +90,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	   Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
    } else {showReload('Другой текст');}
+}
 }	
 function hideInstall() {
 	$("#hideInstall").remove();
