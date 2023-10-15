@@ -89,7 +89,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	   Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
-   } else showReload();
+   } else {showReload()};
  };
 }	
 function hideInstall() {
@@ -103,7 +103,7 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Storage.set('plugins', updatedPlugins);
 	Lampa.Storage.set('needReboot', true);
 	Lampa.Settings.update();
-	//Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa");
+	Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa");
 };
 
 function checkPlugin(pluginToCheck) {
