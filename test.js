@@ -93,7 +93,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	   showReload(text) {
            Lampa.Modal.open({
            title: text,
- };
+ });
 }	
 function hideInstall() {
 	$("#hideInstall").remove();
