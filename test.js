@@ -83,6 +83,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		}, 300);
+	   settingsWatch(); //здесь задать проверку сколько раз вызываем цикл
    } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!"); showReload();}
  };
 }	
