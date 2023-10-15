@@ -47,7 +47,7 @@ function settingsWatch() {
   			var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
   			if (!elementSettings.length > 0){
     				clearInterval(intervalSettings);
-				showReload('Для установки/удаления плагинов нужно перезагрузить приложение');
+				showReload('Для установки/удаления некоторых плагинов нужно перезагрузить приложение');
   			}
 		}, 1000)
 	}
