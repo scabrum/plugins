@@ -89,7 +89,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	   Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
-   } else showReload(text) {//{showReload('123');}
+   } else {showReload(text);}//{showReload('123');}
            Lampa.Modal.open({
            title: text,
  });
