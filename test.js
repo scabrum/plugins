@@ -102,7 +102,7 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Storage.set('plugins', updatedPlugins);
 	Lampa.Storage.set('needReboot', true);
 	Lampa.Settings.update();
-	Lampa.Noty.show("Плагин " + sourceName + " успешно удален");
+	Lampa.Noty.show("Плагин успешно удален");
 };
 
 function checkPlugin(pluginToCheck) {
