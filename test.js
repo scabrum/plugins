@@ -16,6 +16,7 @@ var icon_add_sisi_plugin = '<div class="settings-folder" style="padding:0!import
 	
 /* Регулярно вызываемые функции */
 	Lampa.Storage.set('needReboot', false);
+	Lampa.Storage.set('needRebootSettingExit', false);
 /* Запрос на перезагрузку в модальном окне */
 function showReload(){
 Lampa.Modal.open({
@@ -40,7 +41,7 @@ Lampa.Modal.open({
 /* Следим за настройками */
 function settingsWatch() {
 	/* проверяем флаг перезагрузки и ждём выхода из настроек */
-	if (Lampa.Storage.get('needReboot')) {
+	if (Lampa.Storage.get('needRebootSettingExit')) {
   		var intervalSettings = setInterval(function() {
   			var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
   			if (!elementSettings.length > 0){
@@ -85,6 +86,8 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		}, 300);
+	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
+	   Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
    } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!"); showReload();}
  };
