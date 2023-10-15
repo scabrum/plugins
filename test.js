@@ -43,6 +43,7 @@ function settingsWatch() {
   		var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
   		if (!elementSettings.length > 0){
     			clearInterval(intervalSettings);
+			showReload();
   		}
 	}, 1000)
 }
@@ -82,7 +83,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		}, 300);
-   } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!")}
+   } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!"); showReload();}
  };
 }	
 function hideInstall() {
@@ -96,6 +97,7 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Storage.set('plugins', updatedPlugins);
 	Lampa.Storage.set('needReboot', true);
 	Lampa.Settings.update();
+	showReload();
 	//Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa");
 };
 
