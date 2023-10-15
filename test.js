@@ -18,12 +18,12 @@ var icon_add_sisi_plugin = '<div class="settings-folder" style="padding:0!import
 	Lampa.Storage.set('needReboot', false);
 	Lampa.Storage.set('needRebootSettingExit', false);
 /* Запрос на перезагрузку в модальном окне */
-function showReload(){
+function showReload(reloadText){
 Lampa.Modal.open({
       title: '',
       align: 'center',
       zIndex: 300,
-      html: $('<div class="about">' + 'Для применения изменений в плагинах необходимо перезагрузить приложение' + '</div>'),
+      html: $('<div class="about">' + reloadText + '</div>'),
       buttons: [{
         name: 'Нет',
         onSelect: function onSelect() {
@@ -46,7 +46,7 @@ function settingsWatch() {
   			var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
   			if (!elementSettings.length > 0){
     				clearInterval(intervalSettings);
-				showReload();
+				showReload('Текст при выходе из Настроек');
   			}
 		}, 1000)
 	}
@@ -89,10 +89,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	   Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
-   } else {showReload(qwerty);}//{showReload('123');}
-           Lampa.Modal.open({
-           title: text,
- });
+   } else {showReload('Другой текст');}
 }	
 function hideInstall() {
 	$("#hideInstall").remove();
