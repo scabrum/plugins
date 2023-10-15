@@ -16,6 +16,37 @@ var icon_add_sisi_plugin = '<div class="settings-folder" style="padding:0!import
 	
 /* Регулярно вызываемые функции */
 	Lampa.Storage.set('needReboot', false);
+/* Запрос на перезагрузку в модальном окне */
+function showReload(){
+Lampa.Modal.open({
+      title: '',
+      align: 'center',
+      zIndex: 300,
+      html: $('<div class="about">' + 'Для применения изменений в плагинах необходимо перезагрузить приложение' + '</div>'),
+      buttons: [{
+        name: 'Нет',
+        onSelect: function onSelect() {
+          Lampa.Modal.close();
+          $('.modal').remove();
+        }
+      }, {
+        name: 'Да',
+        onSelect: function onSelect() {
+          window.location.reload();
+        }
+      }]
+});
+}
+/* Следим за настройками */
+function settingsWatch() {
+  	var intervalSettings = setInterval(function() {
+  		var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
+  		if (!elementSettings.length > 0){
+    			clearInterval(intervalSettings);
+  		}
+	}, 1000)
+}
+	
 /* Способ от Lampac -->
 function itemON(sourceURL, sourceName) {
                    var script = document.createElement ('script');
@@ -66,32 +97,6 @@ function deletePlugin(pluginToRemoveUrl) {
 	Lampa.Storage.set('needReboot', true);
 	Lampa.Settings.update();
 	//Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa");
-  //function showReload() {
-  var interval = setInterval(function() {
-  var elementSE = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
-  if (!elementSE.length > 0){
-    clearInterval(interval);
-    Lampa.Modal.open({
-      title: '',
-      align: 'center',
-      zIndex: 300,
-      html: $('<div class="about">' + 'Для применения плагина необходимо перезагрузить приложение' + '</div>'),
-      buttons: [{
-        name: 'Нет',
-        onSelect: function onSelect() {
-          Lampa.Modal.close();
-          $('.modal').remove();
-        }
-      }, {
-        name: 'Да',
-        onSelect: function onSelect() {
-          window.location.reload();
-        }
-      }]
-    });
-  }
-}, 1000)	
-  //};
 };
 
 function checkPlugin(pluginToCheck) {
