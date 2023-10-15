@@ -89,14 +89,13 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	   Lampa.Storage.set('needRebootSettingExit', true);
 	   settingsWatch();
-   } else {showReload()};
+   } else {showReload();}
  };
 }	
 function hideInstall() {
 	$("#hideInstall").remove();
 	$('body').append('<div id="hideInstall"><style>div.settings-param__value{opacity: 0%!important;display: none;}</style><div>')
 }
-
 function deletePlugin(pluginToRemoveUrl) {
 	var plugins = Lampa.Storage.get('plugins');
 	var updatedPlugins = plugins.filter(function(obj) {return obj.url !== pluginToRemoveUrl});
