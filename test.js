@@ -88,9 +88,9 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		}, 300);
 	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
-	   Lampa.Storage.set('needRebootSettingExit', true);
-	   settingsWatch();
-   } else {showReload('Для установки плагинов нужно перезагрузить приложение');}
+	  // Lampa.Storage.set('needRebootSettingExit', true);
+	  // settingsWatch();
+   //} else {showReload('Для установки плагинов нужно перезагрузить приложение');}
 }
 }	
 function hideInstall() {
