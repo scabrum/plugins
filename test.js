@@ -90,7 +90,7 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 	// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
 	  // Lampa.Storage.set('needRebootSettingExit', true);
 	  // settingsWatch();
-   //} else {showReload('Для установки плагинов нужно перезагрузить приложение');}
+   } //else {showReload('Для установки плагинов нужно перезагрузить приложение');}
 }
 }	
 function hideInstall() {
