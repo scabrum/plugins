@@ -16,6 +16,42 @@ var icon_add_sisi_plugin = '<div class="settings-folder" style="padding:0!import
 	
 /* Регулярно вызываемые функции */
 	Lampa.Storage.set('needReboot', false);
+	Lampa.Storage.set('needRebootSettingExit', false);
+/* Запрос на перезагрузку в модальном окне */
+function showReload(reloadText){
+Lampa.Modal.open({
+      title: '',
+      align: 'center',
+      zIndex: 300,
+      html: $('<div class="about">' + reloadText + '</div>'),
+      buttons: [{
+        name: 'Нет',
+        onSelect: function onSelect() {
+          Lampa.Modal.close();
+          $('.modal').remove();
+	  Lampa.Controller.toggle('settings_component');
+        }
+      }, {
+        name: 'Да',
+        onSelect: function onSelect() {
+          window.location.reload();
+        }
+      }]
+});
+}
+/* Следим за настройками */
+function settingsWatch() {
+	/* проверяем флаг перезагрузки и ждём выхода из настроек */
+	if (Lampa.Storage.get('needRebootSettingExit')) {
+  		var intervalSettings = setInterval(function() {
+  			var elementSettings = $('#app > div.settings > div.settings__content.layer--height > div.settings__body > div');
+  			if (!elementSettings.length > 0){
+    				clearInterval(intervalSettings);
+				showReload('Для полного удаления плагина перезагрузите приложение!');
+  			}
+		}, 1000)
+	}
+}
 /* Способ от Lampac -->
 function itemON(sourceURL, sourceName) {
                    var script = document.createElement ('script');
@@ -51,8 +87,11 @@ if ($('DIV[data-name="' + itemName + '"]').find('.settings-param__status').hasCl
 			Lampa.Settings.update();
 			Lampa.Noty.show("Плагин " + sourceName + " успешно установлен")
 		}, 300);
-   } else {Lampa.Noty.show("ОШИБКА: Перед установкой плагина перезагрузите Lampa!")}
- };
+// Отправляем сигнал ожидания выхода из настроек для появления окна с предложением перезагрузки
+	  // Lampa.Storage.set('needRebootSettingExit', true);
+	  // settingsWatch();
+   } //else {showReload('Для установки плагинов после удаления, нужно перезагрузить приложение');}
+}
 }	
 function hideInstall() {
 	$("#hideInstall").remove();
@@ -63,9 +102,11 @@ function deletePlugin(pluginToRemoveUrl) {
 	var plugins = Lampa.Storage.get('plugins');
 	var updatedPlugins = plugins.filter(function(obj) {return obj.url !== pluginToRemoveUrl});
 	Lampa.Storage.set('plugins', updatedPlugins);
-	Lampa.Storage.set('needReboot', true);
+	//Lampa.Storage.set('needReboot', true);
 	Lampa.Settings.update();
-	Lampa.Noty.show("Плагин успешно удален, перезагрузите Lampa"); 
+	Lampa.Noty.show("Плагин успешно удален");
+	Lampa.Storage.set('needRebootSettingExit', true);
+	   settingsWatch();
 };
 
 function checkPlugin(pluginToCheck) {
@@ -347,7 +388,43 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	         Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Mult',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Мультфильмы',
+						description: 'Плагин заменяет пункт Аниме на Мульт'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('http://95.215.8.180/plugins/mult.js', 'Мультфильмы', '@AndreyURL54', 'Mult');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://95.215.8.180/plugins/mult.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('http://95.215.8.180/plugins/mult.js')
+						setTimeout(function() {	
+							$('div[data-name="Mult"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Mult"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
                                          name: 'Reboot_interface_plugin',
@@ -362,7 +439,7 @@ Lampa.SettingsApi.addComponent({
                                          location.reload();
                                       });
                                    }
-	        });
+	        });*/
 	        
 
         Lampa.Settings.listener.follow('open', function (e) {
@@ -613,7 +690,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);			  
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
                                   param: {
                                          name: 'Reboot_management_plugin',
@@ -628,7 +705,7 @@ Lampa.SettingsApi.addComponent({
                                          location.reload();
                                       });
                                    }
-	        });
+	        });*/
 
         Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -843,7 +920,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);			  
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_online_plugin',
                                   param: {
                                          name: 'Reboot_online_plugin',
@@ -858,7 +935,7 @@ Lampa.SettingsApi.addComponent({
                                          location.reload();
                                       });
                                    }
-		});			   
+		});	*/		   
 /* Торрент */
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -1034,7 +1111,7 @@ Lampa.SettingsApi.addComponent({
 							}
 						}, 100);		  
 					}
-		});
+		});/*
 	        Lampa.SettingsApi.addParam({
                                   component: 'add_torrent_plugin',
                                   param: {
@@ -1050,7 +1127,7 @@ Lampa.SettingsApi.addComponent({
                                          location.reload();
                                       });
                                    }
-		});			   
+		});*/			   
 	
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -1191,7 +1268,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_tv_plugin',
                                   param: {
                                          name: 'Reboot_tv_plugin',
@@ -1206,7 +1283,7 @@ Lampa.SettingsApi.addComponent({
                                          location.reload();
                                       });
                                    }
-		});			   
+		});*/			   
 
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -1310,7 +1387,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	       /* Lampa.SettingsApi.addParam({
                                   component: 'add_radio_plugin',
                                   param: {
                                          name: 'Reboot_radio_plugin',
@@ -1325,7 +1402,7 @@ Lampa.SettingsApi.addComponent({
                                          location.reload();
                                       });
                                    }
-		});			   
+		});*/			   
 /* Клубника */
 		Lampa.Settings.listener.follow('open', function (e) {
 					if (e.name == 'main') {
@@ -1392,7 +1469,7 @@ Lampa.SettingsApi.addComponent({
 						}, 100);		  
 					}
 		});
-	        Lampa.SettingsApi.addParam({
+	        /*Lampa.SettingsApi.addParam({
                                   component: 'add_sisi_plugin',
                                   param: {
                                          name: 'Reboot_sisi_plugin',
@@ -1407,7 +1484,7 @@ Lampa.SettingsApi.addComponent({
                                          location.reload();
                                       });
                                    }
-		});			   
+		}); */			   
 /* Счётчик Яндекса */    
 	(function(m, e, t, r, i, k, a) {
                        m[i] = m[i] || function() {
