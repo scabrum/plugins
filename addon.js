@@ -1232,6 +1232,43 @@ Lampa.SettingsApi.addComponent({
 					}
 		});
 
+	Lampa.SettingsApi.addParam({
+					component: 'add_tv_plugin',
+					param: {
+						name: 'skaz',
+                        			type: 'select',
+                        			values: {
+							1:	'Установить',
+							2:	'Удалить',
+                        		},
+					//default: '1',
+					},
+					field: {
+						name: 'ТВ by skaz',
+						description: 'Плагин для просмотра IPTV каналов. Беспплатные каналы и подписка'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('http://skaztv.online/tv.js', 'ТВ by skaz', '@helpiptv', 'ТВ by skaz');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://skaztv.online/tv.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://skaztv.online/tv.js')
+						setTimeout(function() {	
+							$('div[data-name="skaz"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="skaz"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="skaz"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
+
 		Lampa.SettingsApi.addParam({
 					component: 'add_tv_plugin',
 					param: {
