@@ -43,6 +43,7 @@ Lampa.SettingsApi.addParam({
           }, 0);
         }
    });
+	/* Проверка на ответ серверов
 	function getParams() {
 		var xhr = new XMLHttpRequest();
 		xhr.timeout = 1000
@@ -54,7 +55,7 @@ Lampa.SettingsApi.addParam({
 			}
 		}
 	}
-	getParams();
+	getParams();  */
         (function(m, e, t, r, i, k, a) {
                m[i] = m[i] || function() {
                        (m[i].a = m[i].a || []).push(arguments)
