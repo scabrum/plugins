@@ -6,7 +6,7 @@ Lampa.Storage.set('parser_use', true)
 Lampa.SettingsApi.addParam({
     component: 'parser',
     param: {
-     name: 'jackett_url2',
+     name: 'jackett_url_two',
      type: 'select',
      values: {
         no_parser:        'Не выбран',
@@ -38,7 +38,7 @@ Lampa.SettingsApi.addParam({
         $('div[data-children="parser"]').on('hover:enter', function(){
         Lampa.Settings.update();
         });
-        if(Lampa.Storage.field('parser_use')) item.show()&$('.settings-param__name', item).css('color','f3d900')&$('div[data-name="jackett_url2"]').insertAfter('div[data-children="parser"]');
+        if(Lampa.Storage.field('parser_use')) item.show()&$('.settings-param__name', item).css('color','f3d900')&$('div[data-name="jackett_url_two"]').insertAfter('div[data-children="parser"]');
         else item.hide();
           }, 0);
         }
