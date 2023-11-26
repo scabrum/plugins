@@ -424,6 +424,42 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Collections',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Коллекции',
+						description: 'Обнаружьте захватывающие коллекции фильмов и сериалов в главном меню приложения. От новинок до классики — каждая коллекция это увлекательное погружение в мир киноискусства'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://cub.red/plugin/collections', 'Коллекции', '@lampa', 'Collections');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://cub.red/plugin/collections";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://cub.red/plugin/collections')
+						setTimeout(function() {	
+							$('div[data-name="Collections"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Collections"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
