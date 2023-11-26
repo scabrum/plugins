@@ -726,6 +726,42 @@ Lampa.SettingsApi.addComponent({
 						}, 100);			  
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_management_plugin',
+					param: {
+						name: 'Wsoff',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+                                    		name: 'Wsoff',
+                                    		description: 'Плагин отключения ошибки (Request was denied for security) на старых версиях Android.Не устанавливать, если ошибки нет'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('http://plugin.rootu.top/wsoff.js', 'Wsoff', '@rootu', 'Wsoff');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "http://plugin.rootu.top/wsoff.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('http://plugin.rootu.top/wsoff.js')
+						setTimeout(function() {	
+							$('div[data-name="Wsoff"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Wsoff"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Wsoff"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);			  
+					}
+		});
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_management_plugin',
                                   param: {
