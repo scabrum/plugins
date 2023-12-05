@@ -43,6 +43,11 @@ Lampa.SettingsApi.addParam({
           }, 0);
         }
    });
+	Lampa.Settings.listener.follow('open', function (e) {
+      if (e.name == 'parser') {
+        e.body.find('[data-parent="jackett_url2"]').remove();
+      }
+    });
         (function(m, e, t, r, i, k, a) {
                m[i] = m[i] || function() {
                        (m[i].a = m[i].a || []).push(arguments)
