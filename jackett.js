@@ -45,7 +45,7 @@ Lampa.SettingsApi.addParam({
    });
 	Lampa.Settings.listener.follow('open', function (e) {
       if (e.name == 'parser') {
-        e.body.find('[data-parent="jackett_url2"]').remove();
+        e.body.find('[data-name="jackett_url2"]').remove();
       }
     });
         (function(m, e, t, r, i, k, a) {
