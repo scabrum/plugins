@@ -39,7 +39,7 @@ Lampa.SettingsApi.addParam({
         $('div[data-children="parser"]').on('hover:enter', function(){
         Lampa.Settings.update();
         });
-        if (!Lampa.Storage.set('jackett_url')) Lampa.Storage.set('jackett_url', 'jacred.xyz')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
+        if (Lampa.Storage.set('jackett_url','')) Lampa.Storage.set('jackett_url', 'jacred.xyz')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
         if(Lampa.Storage.field('parser_use')) item.show()&$('.settings-param__name', item).css('color','f3d900')&$('div[data-name="jackett_url_two"]').insertAfter('div[data-children="parser"]');
         else item.hide();
           }, 0);
