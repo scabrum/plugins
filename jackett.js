@@ -9,7 +9,7 @@ Lampa.SettingsApi.addParam({
      name: 'jackett_url_two',
      type: 'select',
      values: {
-        no_parser:        'Не выбран',
+        //no_parser:        'Не выбран',
         jac_lampa32_ru:   'Lampa32',
         jacred_xyz:       'Jacred.xyz',
 	jacred_ru:        'Jacred.ru',
@@ -24,7 +24,7 @@ Lampa.SettingsApi.addParam({
      description: 'Нажмите для выбора парсера из списка'
     },
     onChange: function (value) {
-     if (value == 'no_parser') Lampa.Storage.set('jackett_url', '')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
+   //  if (value == 'no_parser') Lampa.Storage.set('jackett_url', '')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
      if (value == 'jac_lampa32_ru') Lampa.Storage.set('jackett_url', 'jac.lampa32.ru')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview','all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
      if (value == 'spawn_jacred') Lampa.Storage.set('jackett_url', 'spawn.pp.ua:59118')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
      if (value == 'jacred_xyz') Lampa.Storage.set('jackett_url', 'jacred.xyz')&Lampa.Storage.set('jackett_key', '')&Lampa.Storage.set('jackett_interview', 'all')&Lampa.Storage.set('parse_in_search', false)&Lampa.Storage.set('parse_lang', 'lg');
