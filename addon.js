@@ -1183,7 +1183,44 @@ Lampa.SettingsApi.addComponent({
 							}
 						}, 100);		  
 					}
-		});/*
+		});
+	         Lampa.SettingsApi.addParam({
+					component: 'add_torrent_plugin',
+					param: {
+						name: 'Torr_download',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+					},
+					field: {
+						name: 'Закачка торрентов',
+						description: 'Плагин добавляет подключение торрент клиентов таких как qBittorent, Transmission с последующей возможностью загрузки торрента через него для локального просмотра'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+							itemON('https://lampame.github.io/td/td.js', 'Закачка Торрентов', '@feliks', 'Torr_download');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://lampame.github.io/td/td.js";
+							deletePlugin(pluginToRemoveUrl);
+                                                }
+					},
+					onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall();
+						var myResult = checkPlugin('https://lampame.github.io/td/td.js')
+						setTimeout(function() {	
+							$('div[data-name="Torr_download"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Torr_download"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);		  
+					}
+		});
+	/*
 	        Lampa.SettingsApi.addParam({
                                   component: 'add_torrent_plugin',
                                   param: {
