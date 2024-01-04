@@ -1,5 +1,6 @@
 (function() {
 	'use strict';
+Lampa.Platform.tv();
 Lampa.Storage.set('parser_use', true)
 var proto = location.protocol === "https:" ? 'https://' : 'http://'
 
