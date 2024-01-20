@@ -461,6 +461,42 @@ Lampa.SettingsApi.addComponent({
 						}, 100);
 					}
 		});
+	        Lampa.SettingsApi.addParam({
+					component: 'add_interface_plugin',
+					param: {
+						name: 'Weather',
+						type: 'select',
+						values: {
+							1:	'Установить',
+							2:	'Удалить',
+						},
+					//default: '1',
+						},
+					field: {
+						name: 'Погода',
+						description: 'Плагин будет поочередно показывать время и погоду, чередуя их показания'
+					},
+					onChange: function(value) {
+						if (value == '1') {
+						       itemON('https://scabrum.github.io/plugins/weather.js', 'Погода', '@lampishe', 'Weather');
+						}
+						if (value == '2') {
+							var pluginToRemoveUrl = "https://scabrum.github.io/plugins/weather.js";
+							deletePlugin(pluginToRemoveUrl);
+						}
+					},
+			                onRender: function (item) {$('.settings-param__name', item).css('color','f3d900'); hideInstall()
+						var myResult = checkPlugin('https://scabrum.github.io/plugins/weather.js')
+						setTimeout(function() {	
+							$('div[data-name="Weather"]').append('<div class="settings-param__status one"></div>')
+							if (myResult) {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('active')
+							} else {
+								$('div[data-name="Weather"]').find('.settings-param__status').removeClass('active error wait').addClass('error')
+							}
+						}, 100);
+					}
+		});
 	      /*  Lampa.SettingsApi.addParam({
                                   component: 'add_interface_plugin',
                                   param: {
