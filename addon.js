@@ -2,7 +2,7 @@
     'use strict';
 	var plugins = Lampa.Storage.get('plugins','[]')
 	plugins.forEach(function(plug) {
-		plug.url = (plug.url + '').replace('https://scabrum.github.io/plugins/addon.js', 'https://tinyurl.com/lampashop');
+		plug.url = (plug.url + '').replace('https://tinyurl.com/lampashop', 'https://scabrum.github.io/plugins/addon.js');
 	})	
 	Lampa.Storage.set('plugins',plugins)
 function addonStart() {
