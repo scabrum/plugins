@@ -2,7 +2,7 @@
 	'use strict';
 	var plugins = Lampa.Storage.get('plugins','[]')
 	plugins.forEach(function(plug) {
-		plug.url = (plug.url + '').replace('https://scabrum.github.io/plugins/jackett.js', 'https://bylampa.github.io/jackett.js');
+		plug.url = (plug.url + '').replace('https://scabrum.github.io/plugins/jackett.js', 'https://bylampa.github.io/jackett.js').replace('http://scabrum.github.io/plugins/jackett.js', 'https://bylampa.github.io/jackett.js');
 	})	
 	Lampa.Storage.set('plugins',plugins)
 Lampa.Platform.tv();
