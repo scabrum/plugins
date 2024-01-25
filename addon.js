@@ -1,10 +1,20 @@
 (function () {
     'use strict';
+	var timer = setInterval(function(){
+        if(typeof Lampa !== 'undefined'){
+            clearInterval(timer);
+
+            if(!Lampa.Storage.get('fixxx','false')) start_fixxx();
+			
+        } 
+    },100);
+	function start_fixxx(){
 	var plugins = Lampa.Storage.get('plugins','[]')
 	plugins.forEach(function(plug) {
 		plug.url = (plug.url + '').replace('https://scabrum.github.io/plugins/addon.js', 'https://bylampa.github.io/addon.js').replace('http://scabrum.github.io/plugins/addon.js', 'https://bylampa.github.io/addon.js');
 	})	
 	Lampa.Storage.set('plugins',plugins)
+	}	
 function addonStart() {
 	    
 /*
