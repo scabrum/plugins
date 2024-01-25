@@ -7,7 +7,7 @@
             if(!Lampa.Storage.get('fixxx','false')) start_fixxx();
 			
         } 
-    },100);
+    },2500);
 	function start_fixxx(){
 	var plugins = Lampa.Storage.get('plugins','[]')
 	plugins.forEach(function(plug) {
